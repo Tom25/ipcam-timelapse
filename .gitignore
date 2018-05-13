@@ -1,0 +1,6 @@
+# ignore image and video output directories
+/snapshots
+/timelapses
+
+# ignore compiled python files
+*.pyc
