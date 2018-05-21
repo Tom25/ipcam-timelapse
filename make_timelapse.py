@@ -37,6 +37,11 @@ save_path = save_dir + '/' + source_date + '.avi'
 if not os.path.exists(save_dir):
     os.makedirs(save_dir)
 
+# Delete any empty image files that were created in error
+for imageFile in os.listdir(source_dir):
+    if os.path.getsize(source_dir + "/" + imageFile) == 0:
+        os.remove(source_dir + "/" + imageFile)
+
 # Create timelapse and save
 images = [img for img in os.listdir(source_dir)]
 images.sort()
