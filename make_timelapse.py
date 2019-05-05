@@ -48,7 +48,7 @@ images.sort()
 frame = cv2.imread(os.path.join(source_dir, images[0]))
 height, width, layers = frame.shape
 
-fourcc = cv2.cv.CV_FOURCC(*'XVID')
+fourcc = cv2.VideoWriter_fourcc(*'XVID')
 video = cv2.VideoWriter(save_path, fourcc, output_fps, (width,height))
 
 for image in images:
